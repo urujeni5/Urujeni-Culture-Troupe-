@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urujeni Culture Troupe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo-placeholder">UC</div>
+
+    <div class="header-text">
+        <h1>Urujeni Culture Troupe</h1>
+        <p>Culture • Talent • Unity</p>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="navMenu">
+        <a href="#home">Ahabanza</a>
+        <a href="#about">Twebwe</a>
+        <a href="#requirements">Ibisabwa</a>
+        <a href="#register">Iyandikishe</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <p>WELCOME TO</p>
+    <h2>Urujeni Culture Troupe</h2>
+
+    <p>
+        Aho umuco, impano n'ubumwe bihurira.
+        Twakira abantu bafite impano yo kubyina,
+        kuririmba no guteza imbere umuco nyarwanda.
+    </p>
+
+    <button onclick="startRegistration()">
+        Iyandikishe nonaha
+    </button>
+</section>
+
+<section id="about" class="section">
+    <h2>Twebwe</h2>
+
+    <p>
+        Urujeni Culture Troupe ni itsinda rigamije guteza imbere
+        umuco n'impano z'urubyiruko binyuze mu kubyina,
+        kuririmba no gukorera hamwe.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">💃</div>
+            <h3>Kubyina</h3>
+            <p>
+                Guteza imbere impano zo kubyina no kwerekana
+                imbyino z'umuco.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🎤</div>
+            <h3>Kuririmba</h3>
+            <p>
+                Gushyigikira abafite impano yo kuririmba
+                no guteza imbere umuziki w'umuco.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🇷🇼</div>
+            <h3>Umuco</h3>
+            <p>
+                Kubungabunga no guteza imbere umuco nyarwanda.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="requirements" class="section">
+    <h2>Ibisabwa</h2>
+
+    <div class="requirements-box">
+        <ul>
+            <li>🇷🇼 Kuba uri Umunyarwanda</li>
+            <li>💃 Gukunda kubyina</li>
+            <li>🔞 Kuba ufite imyaka 18 cyangwa irenga</li>
+            <li>⭐ Kuba ufite impano cyangwa ubushake bwo kuyiteza imbere</li>
+            <li>🤝 Kuba ushobora gukorera mu itsinda</li>
+        </ul>
+    </div>
+</section>
+
+<section id="register" class="section">
+    <h2>Iyandikishe muri Urujeni Culture Troupe</h2>
+
+    <p class="section-intro">
+        Uzuza amakuru akurikira neza kugira ngo ubashe kwiyandikisha.
+    </p>
+
+    <form id="registrationForm">
+
+        <label for="fullName">Amazina yawe</label>
+        <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Andika amazina yawe"
+            required
+        >
+
+        <label for="phone">Numero ya Telephone</label>
+        <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="07XXXXXXXX"
+            required
+        >
+
+        <label for="email">Email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@gmail.com"
+            required
+        >
+
+        <label for="gender">Igitsina</label>
+        <select id="gender" name="gender" required>
+            <option value="">-- Hitamo --</option>
+            <option value="male">Gabo</option>
+            <option value="female">Gore</option>
+        </select>
+
+        <label for="age">Imyaka</label>
+        <input
+            type="number"
+            id="age"
+            name="age"
+            min="18"
+            placeholder="Andika imyaka yawe"
+            required
+        >
+
+        <label for="location">Aho utuye</label>
+        <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Urugero: Kigali"
+            required
+        >
+
+        <label for="talent">Impano ufite</label>
+        <select id="talent" name="talent" required>
+            <option value="">-- Hitamo --</option>
+            <option value="dance">Kubyina</option>
+            <option value="singing">Kuririmba</option>
+            <option value="culture">Umuco</option>
+            <option value="other">Ibindi</option>
+        </select>
+
+        <label for="danceLevel">
+            Ese usanzwe uzi kubyina?
+        </label>
+
+        <select
+            id="danceLevel"
+            name="danceLevel"
+            required
+            onchange="showVideoField()"
+        >
+            <option value="">-- Hitamo --</option>
+
+            <option value="yes">
+                Yego, nsanzwe nzi kubyina
+            </option>
+
+            <option value="no">
+                Oya, sindabizi ariko mfite ubushake bwo kubyiga
+            </option>
+        </select>
+
+        <div id="videoField" class="video-field">
+
+            <label for="danceVideo">
+                🎥 Shyiramo Video yawe yo kubyina
+            </label>
+
+            <input
+                type="file"
+                id="danceVideo"
+                name="danceVideo"
+                accept="video/*"
+            >
+
+            <p class="video-note">
+                Shyiramo video ngufi igaragaza uko ubyina.
+            </p>
+
+        </div>
+
+        <label for="message">Ubutumwa / Ibindi wifuza kutubwira</label>
+
+        <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Andika ubutumwa bwawe hano..."
+        ></textarea>
+
+        <div class="submit-box">
+
+            <div class="submit-icon">📩</div>
+
+            <h3>Ohereza Registration yawe</h3>
+
+            <p>
+                Reba neza ko amakuru yose wuzuza ari yo,
+                hanyuma ukande hano wohereze registration yawe.
+            </p>
+
+            <button type="submit" class="submit-btn">
+                Kohereza Registration
+            </button>
+
+            <small>
+                🔒 Amakuru yawe azakoreshwa mu gusuzuma ubusabe bwawe.
+            </small>
+
+        </div>
+
+    </form>
+</section>
+
+<footer class="footer">
+    <h3>Urujeni Culture Troupe</h3>
+    <p>Culture • Talent • Unity</p>
+    <p>© 2026 Urujeni Culture Troupe. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+  </html>
